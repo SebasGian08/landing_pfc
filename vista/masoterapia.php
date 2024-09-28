@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <title>Instituto Arzobispo Loayza</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -15,37 +14,15 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/personalizado.css">
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/templatemo-style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Asegúrate de incluir Bootstrap después de jQuery -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <style>
-    .notification {
-        display: none;
-        position: fixed;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1000;
-        width: 80%;
-        max-width: 400px;
-        background-color: #d4edda;
-        color: #155724;
-        border: 1px solid #c3e6cb;
-        padding: 15px;
-        border-radius: 5px;
-    }
+</head>
 
-    .close-notification {
-        cursor: pointer;
-        float: right;
-        font-size: 18px;
-    }
-    </style>
-</head>
-</head>
 
 <body>
     <!-- PRE LOADER -->
@@ -59,7 +36,7 @@
     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header d-flex justify-content-between align-items-center">
-                <a href="https://www.ial.edu.pe/landing_pfc/masoterapia" class="navbar-brand d-flex align-items-center">
+                <a href="https://www.ial.edu.pe/landing_pfc/nutricion" class="navbar-brand d-flex align-items-center">
                     <img src="images/LOGOFPC.png" style="width: 7%;" alt="">
                     <span class="logo-text" style="color: #002b6a; font-size: 18px;">ELEVA TU PERFIL
                         PROFESIONAL</span>
@@ -67,91 +44,6 @@
             </div>
         </div>
     </section>
-
-
-    <!-- Para el Modal -->
-    <style>
-    .modal-footer {
-        display: flex;
-        justify-content: center;
-        padding: 20px;
-        /* Ajusta el valor según necesites */
-    }
-
-    .btn-primary {
-        padding: 10px 20px;
-        /* Ajusta el padding del botón */
-    }
-    </style>
-    <script>
-    $(document).ready(function() {
-        // Función para mostrar el modal
-        function showDniModal() {
-            $('#dniModal').modal({
-                backdrop: 'static', // No permitir cerrar al hacer clic fuera
-                keyboard: false // No permitir cerrar con la tecla Esc
-            });
-        }
-
-        // Verificar si se debe mostrar el modal
-        function checkDniModal() {
-            const lastShown = localStorage.getItem('dniModalLastShown');
-            const now = new Date().getTime();
-
-            // Si no hay fecha almacenada, mostrar el modal
-            if (!lastShown) {
-                showDniModal();
-                return;
-            }
-
-            // Verificar si ha pasado más de un día (86400000 ms en un día)
-            /* const oneDay = 86400000; */
-            /* const oneMinute = 60000; */
-            const sixHours = 21600000;
-            if (now - lastShown >= sixHours) {
-                showDniModal();
-            }
-        }
-
-        // Llama a la función de verificación al cargar la página
-        checkDniModal();
-
-        $('#submitDNI').click(function(event) {
-            event.preventDefault(); // Evita el envío del formulario
-            var dni = $('#dniInput').val().trim();
-            // Realiza una solicitud AJAX a tu API usando POST
-            $.ajax({
-                url: 'https://istalcursos.edu.pe/apirest/alumnos',
-                method: 'POST',
-                data: {
-                    documento: dni
-                },
-                success: function(response) {
-                    if (response.success && response.data) {
-                        console.log("Alumno encontrado:", response.data);
-                        $('#dniModal').modal(
-                            'hide'); // Cerrar el modal si se encuentra el alumno
-
-                        // Almacenar la fecha actual al iniciar sesión correctamente
-                        localStorage.setItem('dniModalLastShown', new Date().getTime());
-                    } else {
-                        displayMessage(response.message ||
-                            "No se encontró un alumno con ese DNI.");
-                    }
-                },
-                error: function(xhr, status, error) {
-                    console.error("Error en la solicitud:", error);
-                    displayMessage(
-                        "Hubo un problema al consultar el DNI. Intenta de nuevo.");
-                }
-            });
-        });
-
-        function displayMessage(message) {
-            $('#messageContainer').text(message).removeClass('d-none').addClass('alert alert-warning');
-        }
-    });
-    </script>
 
     <div class="modal fade" id="dniModal" tabindex="-1" role="dialog" aria-labelledby="dniModalLabel" aria-hidden="true"
         style="background-color: rgb(0 43 106 / 91%) !important">
@@ -168,8 +60,9 @@
                     <div id="messageContainer" class="d-none" style="margin-top: 10px;"></div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="submitDNI" style="background:#0b326b!important"><i
-                            class="fas fa-lock"></i> Ingresar</button>
+                    <button type="button" class="btn btn-primary" id="submitDNI"
+                        style="background:#0b326b!important;margin-top:10px;"><i class="fas fa-lock"></i>
+                        Ingresar</button>
                 </div>
             </div>
         </div>
@@ -276,11 +169,11 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col">
-                    <a href="https://www.facebook.com/ial.oficial" target="_blank" class="social-icon"
+                    <a href="https://www.facebook.com/LoayzaPFC" target="_blank" class="social-icon"
                         style="background: white; border-radius: 50%; width: 50px; height: 50px; margin: 5px; color: #002b6a; display: inline-flex; align-items: center; justify-content: center;">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="https://www.instagram.com/ial.oficial/?hl=es" target="_blank" class="social-icon"
+                    <a href="https://www.instagram.com/pfc.ial" target="_blank" class="social-icon"
                         style="background: white; border-radius: 50%; width: 50px; height: 50px; margin: 5px; color: #002b6a; display: inline-flex; align-items: center; justify-content: center;">
                         <i class="fab fa-instagram"></i>
                     </a>
@@ -297,39 +190,8 @@
 
     <!-- Asegúrate de incluir Font Awesome en tu proyecto -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <style>
-    .social-icon {
-        margin: 0 15px;
-        /* Espaciado entre iconos */
-        font-size: 24px;
-        /* Tamaño del icono */
-        color: #fff;
-        /* Color del icono, cámbialo según tu diseño */
-        text-decoration: none;
-        /* Sin subrayado */
-    }
-
-    .social-icon:hover {
-        color: #f1c40f;
-        /* Color al pasar el mouse */
-    }
-    </style>
-
-
-    <style>
-    .benefit:hover {
-        transform: scale(1.05);
-        cursor: pointer;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-    </style>
-
-
     <!-- Include Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-
     <!-- SCRIPTS -->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -337,7 +199,7 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
-
+    <script src="js/personalizado.js"></script>
 </body>
 
 </html>
