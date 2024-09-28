@@ -59,7 +59,7 @@
     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header d-flex justify-content-between align-items-center">
-                <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <a href="https://www.ial.edu.pe/landing_pfc/masoterapia" class="navbar-brand d-flex align-items-center">
                     <img src="images/LOGOFPC.png" style="width: 7%;" alt="">
                     <span class="logo-text" style="color: #002b6a; font-size: 18px;">ELEVA TU PERFIL
                         PROFESIONAL</span>
@@ -191,25 +191,18 @@
                         </a>
                     </div>
                 </div>
-
-                <div class="col-md-12 col-sm-12" style="padding: 70px; position: relative;">
+                <div class="col-md-12 col-sm-12" style="position: relative;padding-top:70px;padding-bottom:20px;">
                     <div class="home-video"
                         style="border: 1px solid #ccc; border-radius: 10px; overflow: hidden; background: #000;">
                         <div class="embed-responsive embed-responsive-16by9">
-                            <iframe id="player" src="https://www.youtube.com/embed/w8F2hBv5VBY?autoplay=1&mute=1"
-                                title="Curso Manejo Integral de Heridas"
+                            <iframe width="1903" height="750" src="https://www.youtube.com/embed/gUo-x4v3S6E"
+                                title="Curso de Masoterapia" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-                                style="border: none;"></iframe>
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                         <div
                             style="padding: 10px; background: rgb(0 43 106); color: white; font-size: 20px; font-weight: bold;">
-                            <i class="fas fa-play"></i> Manejo Integral de Heridas
-                        </div>
-                        <div
-                            style="display: flex; justify-content: space-between; padding: 5px 10px; background: rgb(0 43 106 / 41%); color: white;">
-                            <span><i class="fas fa-users"></i> 45 viendo ahora</span>
-                            <span>Hace 2 días</span>
+                            Curso de Masoterapia
                         </div>
                     </div>
                 </div>
