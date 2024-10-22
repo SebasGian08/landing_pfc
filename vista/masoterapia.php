@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <title>Instituto Arzobispo Loayza</title>
@@ -199,7 +197,6 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/personalizado.js"></script>
+    <script src="js/masoterapia.js"></script>
 </body>
 
-</html>

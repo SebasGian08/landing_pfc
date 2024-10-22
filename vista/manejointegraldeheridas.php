@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <title>Instituto Arzobispo Loayza</title>
     <meta charset="UTF-8">
@@ -45,8 +42,8 @@
         </div>
     </section>
 
-    <div class="modal fade" id="dniModal" tabindex="-1" role="dialog" aria-labelledby="dniModalLabel" aria-hidden="true"
-        style="background-color: rgb(0 43 106 / 91%) !important">
+    <div class="modal fade" id="dniModalManejo" tabindex="-1" role="dialog" aria-labelledby="dniModalLabel"
+        aria-hidden="true" style="background-color: rgb(0 43 106 / 91%) !important">
         <div class="modal-dialog" role="document">
             <div class="modal-content" style="background:white !important;">
                 <div class="modal-header">
@@ -199,7 +196,5 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/personalizado.js"></script>
+    <script src="js/manejointegraldeheridas.js"></script>
 </body>
-
-</html>

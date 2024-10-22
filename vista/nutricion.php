@@ -44,7 +44,7 @@
         </div>
     </section>
 
-    <div class="modal fade" id="dniModal" tabindex="-1" role="dialog" aria-labelledby="dniModalLabel" aria-hidden="true"
+    <div class="modal fade" id="dniModalNutricion" tabindex="-1" role="dialog" aria-labelledby="dniModalLabel" aria-hidden="true"
         style="background-color: rgb(0 43 106 / 91%) !important">
         <div class="modal-dialog" role="document">
             <div class="modal-content" style="background:white !important;">
@@ -197,7 +197,7 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/smoothscroll.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/personalizado.js"></script>
+    <script src="js/nutricion.js"></script>
 </body>
 
 </html>
