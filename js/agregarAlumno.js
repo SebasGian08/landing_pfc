@@ -1,16 +1,15 @@
 $(document).ready(function () {
   $("#agregar-alumno").on("submit", function (event) {
-    event.preventDefault(); // Evita que se recargue la página
+    event.preventDefault();
 
     $.ajax({
       type: "POST",
-      url: "index.php?vista=agregarAlumno", // Ajusta la ruta según sea necesario
+      url: "index.php?vista=agregarAlumno",
       data: $(this).serialize(),
       dataType: "json",
       success: function (response) {
         $("#resultado").html("<p>" + response.message + "</p>");
         if (response.success) {
-          // Agregar nuevo alumno a la tabla
           $("#tabla-alumnos tbody").append(
             "<tr><td>" +
               response.data.id +
@@ -44,5 +43,4 @@ $(document).ready(function () {
       $("#resultado").html("<p>Error al cargar los alumnos.</p>");
     },
   });
-  
 });

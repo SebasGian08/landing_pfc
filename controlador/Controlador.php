@@ -46,6 +46,7 @@ class Controlador {
                 break;
         }
     }
+    
     public function gestionarVista($vista) {
         if ($vista === 'agregarAlumno' && $_SERVER['REQUEST_METHOD'] === 'POST') {
             // Lógica para agregar alumno

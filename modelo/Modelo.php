@@ -24,32 +24,27 @@ class Modelo {
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
-            return $result->fetch_assoc(); // Retorna el primer alumno encontrado
+            return $result->fetch_assoc();
         } else {
-            return null; // No se encontró ningún alumno
+            return null; 
         }
     }
 
 
     //Agregar Alumno
     public function agregarAlumnoPorDNI($dni) {
-        // Primero, verifica si ya existe un alumno con ese DNI
         if ($this->buscarAlumnoPorDNI($dni)) {
-            return false; // El alumno ya existe
+            return false;
         }
-
-        // Prepara la consulta de inserción
-        /* $stmt = $this->conn->prepare("INSERT INTO alumnos (dni) VALUES (?)"); */
-        $stmt = $this->conn->prepare("SELECT * FROM alumnos WHERE dni = ?");
+        $stmt = $this->conn->prepare("INSERT INTO alumnos (dni) VALUES (?)");
         $stmt->bind_param("s", $dni);
         if ($stmt->execute()) {
-            return ['dni' => $dni, 'mensaje' => 'Alumno registrado.'];
+            $id = $stmt->insert_id;
+            return ['id' => $id, 'dni' => $dni, 'success' => true, 'message' => 'Alumno registrado.'];
         } else {
-            return false; // Fallo en la inserción
+            return ['success' => false, 'message' => 'Error al registrar el alumno.'];
         }
     }
-
-
 
     //Listado de todos los alumnos
     public function obtenerTodosLosAlumnos() {
@@ -67,4 +62,3 @@ class Modelo {
 }
 
 ?>
-

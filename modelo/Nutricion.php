@@ -5,6 +5,8 @@ class Nutricion {
 
     public function __construct() {
         $this->conn = new mysqli('localhost', 'root', '', 'ial_landingpfc');
+        /* $this->conn = new mysqli('localhost', 'root', '', 'ial_landingpfc'); */
+
 
         if ($this->conn->connect_error) {
             die("Conexión fallida: " . $this->conn->connect_error);
@@ -13,6 +15,7 @@ class Nutricion {
 
     public function buscarAlumnoNutricion($dni) {
         $stmt = $this->conn->prepare("SELECT * FROM alumnos WHERE dni = ? AND curso_id = ?");
+        /* $stmt = $this->conn->prepare("SELECT * FROM landing_pfc WHERE dni = ? AND curso_id = ?"); */
         $curso_id = 3;
         $stmt->bind_param("si", $dni, $curso_id);
         $stmt->execute();
