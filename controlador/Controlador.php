@@ -12,41 +12,39 @@ class Controlador {
         $this->modelo = new Modelo();
     }
 
-    public function manejarSolicitud($tipoVista) {
-        switch ($tipoVista) {
-            case 'nutricion':
-                include __DIR__ . '/../vista/nutricion.php';
-                break;
-            case 'BuscarAlumnoPorNutricion':
-                $manejoControlador = new NutricionControlador();
-                $manejoControlador->BuscarAlumnoPorNutricion();
-                exit; // Evitar que se ejecute más código
-            case 'manejointegraldeheridas':
-                include __DIR__ . '/../vista/manejointegraldeheridas.php';
-                break;
-            case 'BuscarAlumnoPorManejoIntegral':
-                $manejoControlador = new ManejoIntegralControlador();
-                $manejoControlador->BuscarAlumnoPorManejoIntegral();
-                exit; // Evitar que se ejecute más código
-            case 'masoterapia':
-                include __DIR__ . '/../vista/masoterapia.php';
-                break;
-            case 'BuscarAlumnoPorMasoterapia':
-                $masoterapiaControlador = new MasoterapiaControlador();
-                $masoterapiaControlador->BuscarAlumnoPorMasoterapia();
-                exit; // Evitar que se ejecute más código
-            case 'agregarAlumno':
-                $this->gestionarVista($tipoVista);
-                exit; // Evitar que se ejecute más código
-            case 'obtenerAlumnos':
-                $this->obtenerAlumnos();
-                exit; // Evitar que se ejecute más código
-            default:
+   public function manejarSolicitud($tipoVista) {
+    $rutaVista = __DIR__ . '/../vista/' . $tipoVista . '/index.php';
+
+    switch ($tipoVista) {
+        case 'BuscarAlumnoPorNutricion':
+            $manejoControlador = new NutricionControlador();
+            $manejoControlador->BuscarAlumnoPorNutricion();
+            exit; // Evitar que se ejecute más código
+        case 'BuscarAlumnoPorManejoIntegral':
+            $manejoControlador = new ManejoIntegralControlador();
+            $manejoControlador->BuscarAlumnoPorManejoIntegral();
+            exit; // Evitar que se ejecute más código
+        case 'BuscarAlumnoPorMasoterapia':
+            $masoterapiaControlador = new MasoterapiaControlador();
+            $masoterapiaControlador->BuscarAlumnoPorMasoterapia();
+            exit; // Evitar que se ejecute más código
+        case 'agregarAlumno':
+            $this->gestionarVista($tipoVista);
+            exit; // Evitar que se ejecute más código
+        case 'obtenerAlumnos':
+            $this->obtenerAlumnos();
+            exit; // Evitar que se ejecute más código
+        default:
+            // Verifica si la vista existe y la incluye, de lo contrario muestra una página 404
+            if (file_exists($rutaVista)) {
+                include $rutaVista;
+            } else {
                 include __DIR__ . '/../vista/notfound.php';
-                break;
-        }
+            }
+            break;
     }
-    
+}
+
     public function gestionarVista($vista) {
         if ($vista === 'agregarAlumno' && $_SERVER['REQUEST_METHOD'] === 'POST') {
             // Lógica para agregar alumno
